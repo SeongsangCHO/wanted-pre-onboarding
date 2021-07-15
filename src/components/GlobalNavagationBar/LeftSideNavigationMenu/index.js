@@ -49,7 +49,7 @@ const leftMenuItems = [
 const LeftSideNavigationMenu = (props) => {
   return (
     <Wrapper>
-      <MenuList>
+      <MenuList className="leftSideNavMenu">
         <li className="xsOnly">
           <a href="/main" data-kind="home">
             홈

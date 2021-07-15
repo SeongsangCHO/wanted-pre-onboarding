@@ -151,8 +151,8 @@ const GlobalNavationBar = (props) => {
     }
   }, [isMounted]);
   return (
-    <Wrapper>
-      <CenterAlignContainer>
+    <Wrapper className="gnb-wrapper">
+      <CenterAlignContainer className="gnb-container">
         <NavigationBar
           onMouseOver={handleExploreMenuMouseOver}
           data-kind="navBar"

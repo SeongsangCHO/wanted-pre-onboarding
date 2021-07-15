@@ -12,17 +12,11 @@ export const MenuList = styled.ul`
   font-weight: 600;
   justify-content: space-around;
   list-style: none;
-  @media screen and (max-width: 768px) {
-    justify-content: end;
-  }
+
   & li {
     height: 100%;
 
-    @media screen and (min-width: 768px) {
-      &.xsOnly {
-        display: none;
-      }
-    }
+
   }
   & a {
     padding: 15px;
@@ -32,10 +26,6 @@ export const MenuList = styled.ul`
     height: 100%;
     font-weight: 600;
     color: black;
-    @media screen and (min-width: 768px) and (max-width: 974px) {
-      padding-left: 0;
-      padding-right: 0;
-      font-size: 13px;
-    }
+
   }
 `;

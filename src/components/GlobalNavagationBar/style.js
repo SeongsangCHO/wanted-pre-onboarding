@@ -6,18 +6,18 @@ export const Wrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: tomato;
-  @media screen and (max-width: 768px) {
-    height: 57px;
-  }
 `;
 export const CenterAlignContainer = styled.div`
   width: 90%;
   height: 100%;
   max-width: 1060px;
   margin: 0 auto;
-  @media screen and (max-width: 768px) {
-    width: 100%;
+  @media screen and (max-width: 767px) {
+    & {
+      margin: 0;
+      padding-top: 4px;
+      width: 100%;
+    }
   }
 `;
 export const NavigationBar = styled.nav`
