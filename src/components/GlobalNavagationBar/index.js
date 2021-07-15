@@ -171,8 +171,11 @@ const GlobalNavationBar = (props) => {
                   <div className="explore-content-table">
                     {exploreItems.map((item) => {
                       return (
-                        <div className="category">
-                          <h2>{item.title}</h2>
+                        <div className="category subitems">
+                          <a>
+                            <h2>{item.title}</h2>
+                            <span className="arrow-right">{">"}</span>
+                          </a>
                           {item.duties.map((duty) => {
                             return (
                               <h3>
@@ -183,9 +186,14 @@ const GlobalNavationBar = (props) => {
                         </div>
                       );
                     })}
-                    <div className="category">
+                    <div className="category onlyTitle">
                       {exploreTitleItems.map((item) => {
-                        return <h2>{item}</h2>;
+                        return (
+                          <a>
+                            <h2>{item}</h2>
+                            <span className="arrow-right">{">"}</span>
+                          </a>
+                        );
                       })}
                     </div>
                   </div>

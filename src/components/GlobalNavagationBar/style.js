@@ -67,21 +67,48 @@ export const ExploreContent = styled.div`
   & div.explore-content-table {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+
+    & div.category.onlyTitle {
+      height: 100%;
+    }
     & div.category {
+      overflow: hidden;
+      height: 100%;
       display: flex;
       flex-direction: column;
       padding: 40px 20px 0 0;
       height: 270px;
-      & h2 {
-        padding-bottom: 15px;
+      & a {
+        cursor: pointer;
+        position: relative;
+      }
+      & span.arrow-right {
+        position: absolute;
+        display: inline;
+        top: 0;
+        left: 100%;
+        transform: translate(-100%, 0px);
+      }
+      & a > h2 {
+        width: 100%;
+        height: 100%;
         font-size: 17px;
+        padding-bottom: 15px;
+        padding-right: 20px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
       & h3 {
-        text-overflow: ellipsis;
+        width: 100%;
+        height: 100%;
         font-size: 13px;
         color: #999;
         padding: 5px 20px 5px 0;
-        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
   }
