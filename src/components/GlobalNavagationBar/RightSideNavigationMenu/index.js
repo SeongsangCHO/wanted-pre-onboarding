@@ -27,10 +27,11 @@ const RightSideNavigationMenu = (props) => {
             ></img>
           </button>
         </li>
-        <div className="profile-wrapper">
+        <div className="profile-wrapper smview">
           <img className="profile-image" src={Profile}></img>
         </div>
-        <li className="company-service-wrapper">
+        <div className="xsOnly">햄</div>
+        <li className="company-service-wrapper smview">
           <a className="company-service-btn">기업 서비스</a>
         </li>
       </MenuList>

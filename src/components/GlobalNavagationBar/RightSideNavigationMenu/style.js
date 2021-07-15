@@ -7,6 +7,9 @@ export const MenuList = styled.ul`
   & li.company-service-wrapper {
     display: flex;
     padding: 0;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     &::before {
       width: 1px;
       height: 10px;
