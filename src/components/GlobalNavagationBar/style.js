@@ -36,7 +36,15 @@ export const ExploreContentPresentation = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
     height: 100%;
   }
+  &.show div.explore-content-wrapper {
+    height: 625px;
+  }
 `;
-export const ExploreContentWrapper = styled.div``;
+export const ExploreContentWrapper = styled.div`
+  height: 0;
+  transition: 0.5s;
+  background-color: aqua;
+  max-height: 625px;
+`;
 export const ExploreContent = styled.div``;
 export const ExploreTable = styled.div``;

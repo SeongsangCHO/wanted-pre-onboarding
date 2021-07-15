@@ -84,7 +84,7 @@ const GlobalNavationBar = (props) => {
           <LeftSideNavigationMenu></LeftSideNavigationMenu>
           {isMounted && (
             <ExploreContentPresentation className={shouldRender ? "show" : ""}>
-              <ExploreContentWrapper>
+              <ExploreContentWrapper className="explore-content-wrapper">
                 <ExploreContent>
                   <ul>
                     <li>테이블1</li>
