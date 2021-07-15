@@ -60,4 +60,11 @@ export const RightMenuList = styled.ul`
       background-color: black;
     }
   }
+  & li  {
+    padding:0 10px;
+  }
+  & img.right-menu-icon {
+    width: 18px;
+    height: 18px;
+  }
 `;

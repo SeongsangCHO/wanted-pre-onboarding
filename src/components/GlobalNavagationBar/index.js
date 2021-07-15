@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { SearchIcon } from "../../assets/search.svg";
+import SearchIcon from "../../assets/search.svg";
+import NotiIcon from "../../assets/bell.svg";
 import {
   Wrapper,
   CenterAlignContainer,
@@ -72,14 +73,18 @@ const GlobalNavationBar = (props) => {
           <aside>
             <RightMenuList>
               <li>
-                <button>돋</button>
+                <button>
+                  <img className="right-menu-icon" src={SearchIcon}></img>
+                </button>
               </li>
               <li>
-                <button>뭐</button>
+                <button>
+                  <img className="right-menu-icon" src={NotiIcon}></img>
+                </button>
               </li>
-              <li>
-                <button>뭐2</button>
-              </li>
+              <div>
+                <div>뭐2</div>
+              </div>
               <li className="company-service">
                 <button>기업 서비스</button>
               </li>
