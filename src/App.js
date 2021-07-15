@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <GlobalNavationBar></GlobalNavationBar>
+      <div id="junk"></div>
     </>
   );
 }
