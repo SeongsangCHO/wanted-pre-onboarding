@@ -178,11 +178,15 @@ const GlobalNavationBar = (props) => {
                           </a>
                           {item.duties.map((duty) => {
                             return (
-                              <h3>
-                                <a>{duty}</a>
-                              </h3>
+                              <a>
+                                <h3>{duty}</h3>
+                              </a>
                             );
                           })}
+                          <a>
+                            <h3>더보기</h3>
+                            <span className="arrow-right">{">"}</span>
+                          </a>
                         </div>
                       );
                     })}

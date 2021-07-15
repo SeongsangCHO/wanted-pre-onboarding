@@ -24,7 +24,6 @@ export const NavigationBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: aliceblue;
   font-size: 14px;
   width: 100%;
   height: 100%;
@@ -55,7 +54,7 @@ export const ExploreContentPresentation = styled.div`
 export const ExploreContentWrapper = styled.div`
   height: 0;
   transition: 0.5s;
-  background-color: aqua;
+  background-color: white;
   max-height: 625px;
 `;
 export const ExploreContent = styled.div`
@@ -77,7 +76,7 @@ export const ExploreContent = styled.div`
       display: flex;
       flex-direction: column;
       padding: 40px 20px 0 0;
-      height: 270px;
+      height: 290px;
       & a {
         cursor: pointer;
         position: relative;
@@ -85,6 +84,7 @@ export const ExploreContent = styled.div`
       & span.arrow-right {
         position: absolute;
         display: inline;
+        color: #999;
         top: 0;
         left: 100%;
         transform: translate(-100%, 0px);
