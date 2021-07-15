@@ -48,9 +48,11 @@ export const LeftMenuList = styled.ul`
 
 export const RightMenuList = styled.ul`
   display: flex;
+  align-items: center;
   list-style: none;
-  & li.company-service {
+  & li.company-service-wrapper {
     display: flex;
+    padding: 0;
     &::before {
       width: 1px;
       height: 10px;
@@ -59,9 +61,20 @@ export const RightMenuList = styled.ul`
       margin: auto 10px;
       background-color: black;
     }
+    & a.company-service-btn {
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid #e1e2e3;
+      border-radius: 15px;
+      margin-left: 15px;
+      color: #666;
+      font-size: 13px;
+      font-weight: 400;
+    }
   }
-  & li  {
-    padding:0 10px;
+  & li,
+  & li > a {
+    padding: 0 10px;
   }
   & img.right-menu-icon {
     width: 18px;

@@ -85,8 +85,8 @@ const GlobalNavationBar = (props) => {
               <div>
                 <div>뭐2</div>
               </div>
-              <li className="company-service">
-                <button>기업 서비스</button>
+              <li className="company-service-wrapper">
+                <a className="company-service-btn">기업 서비스</a>
               </li>
             </RightMenuList>
           </aside>
