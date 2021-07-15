@@ -1,16 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import SearchIcon from "../../assets/search.svg";
-import Profile from "../../assets/nong.png";
-import NotiIcon from "../../assets/bell.svg";
+
+import LeftSideNavigationMenu from "./LeftSideNavigationMenu";
 import {
   Wrapper,
   CenterAlignContainer,
   NavigationBar,
-  LeftMenuList,
-  RightMenuList,
 } from "./style";
+import RightSideNavigationMenu from "./RightSideNavigationMenu";
 const leftMenuItems = [
   {
     id: 1,
@@ -57,48 +55,8 @@ const GlobalNavationBar = (props) => {
           <div>
             <a>logo</a>
           </div>
-          <div>
-            <LeftMenuList>
-              {leftMenuItems.map((menuData) => {
-                return (
-                  <li key={menuData.id}>
-                    <a href="/main" data-kind={menuData.kind}>
-                      {menuData.title}
-                    </a>
-                  </li>
-                );
-              })}
-            </LeftMenuList>
-          </div>
-          <div></div>
-          <aside>
-            <RightMenuList>
-              <li>
-                <button>
-                  <img
-                    className="right-menu-icon"
-                    src={SearchIcon}
-                    alt="search button"
-                  ></img>
-                </button>
-              </li>
-              <li>
-                <button>
-                  <img
-                    className="right-menu-icon"
-                    src={NotiIcon}
-                    alt="notification button"
-                  ></img>
-                </button>
-              </li>
-              <div className="profile-wrapper">
-                <img className="profile-image" src={Profile}></img>
-              </div>
-              <li className="company-service-wrapper">
-                <a className="company-service-btn">기업 서비스</a>
-              </li>
-            </RightMenuList>
-          </aside>
+          <LeftSideNavigationMenu></LeftSideNavigationMenu>
+          <RightSideNavigationMenu></RightSideNavigationMenu>
         </NavigationBar>
       </CenterAlignContainer>
     </Wrapper>
