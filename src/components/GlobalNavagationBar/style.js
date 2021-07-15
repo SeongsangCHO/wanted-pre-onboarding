@@ -24,4 +24,19 @@ export const NavigationBar = styled.div`
   height: 50px;
 `;
 
-
+export const ExploreContentPresentation = styled.div`
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s;
+  height: 0;
+  left: 0;
+  &.show {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+  }
+`;
+export const ExploreContentWrapper = styled.div``;
+export const ExploreContent = styled.div``;
+export const ExploreTable = styled.div``;

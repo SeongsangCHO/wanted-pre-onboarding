@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -7,6 +7,9 @@ import {
   Wrapper,
   CenterAlignContainer,
   NavigationBar,
+  ExploreContentPresentation,
+  ExploreContentWrapper,
+  ExploreContent,
 } from "./style";
 import RightSideNavigationMenu from "./RightSideNavigationMenu";
 const leftMenuItems = [
@@ -48,14 +51,51 @@ const leftMenuItems = [
 ];
 
 const GlobalNavationBar = (props) => {
+  const [isMounted, setIsMounted] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
+  const handleExploreMenuMouseOver = (e) => {
+    const { kind } = e.target.dataset;
+    if (kind === "explore") {
+      setIsMounted(true);
+    }
+    if (kind !== "home" && kind !== "navBar" && kind !== "explore" && kind) {
+      setIsMounted(false);
+    }
+    console.log(kind, "over");
+  };
+
+  useEffect(() => {
+    if (isMounted && !shouldRender) {
+      setShouldRender(true);
+    } else if (!isMounted && shouldRender) {
+      setShouldRender(false);
+    }
+  }, [isMounted]);
   return (
     <Wrapper>
       <CenterAlignContainer>
-        <NavigationBar>
+        <NavigationBar
+          onMouseOver={handleExploreMenuMouseOver}
+          data-kind="navBar"
+        >
           <div>
-            <a>logo</a>
+            <a data-kind="home">logo</a>
           </div>
           <LeftSideNavigationMenu></LeftSideNavigationMenu>
+          {isMounted && (
+            <ExploreContentPresentation className={shouldRender ? "show" : ""}>
+              <ExploreContentWrapper>
+                <ExploreContent>
+                  <ul>
+                    <li>테이블1</li>
+                    <li>테이블1</li>
+                    <li>테이블1</li>
+                    <li>테이블1</li>
+                  </ul>
+                </ExploreContent>
+              </ExploreContentWrapper>
+            </ExploreContentPresentation>
+          )}
           <RightSideNavigationMenu></RightSideNavigationMenu>
         </NavigationBar>
       </CenterAlignContainer>
