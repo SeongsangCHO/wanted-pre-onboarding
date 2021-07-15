@@ -70,14 +70,32 @@ export const RightMenuList = styled.ul`
       color: #666;
       font-size: 13px;
       font-weight: 400;
+      cursor: pointer;
     }
   }
   & li,
   & li > a {
     padding: 0 10px;
   }
+  & button {
+    background: none;
+    cursor: pointer;
+    border: none;
+  }
   & img.right-menu-icon {
     width: 18px;
     height: 18px;
+  }
+  & div.profile-wrapper {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    & image-rendering.profile-image {
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      padding: 3px;
+    }
   }
 `;

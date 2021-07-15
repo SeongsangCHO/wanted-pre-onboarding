@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import SearchIcon from "../../assets/search.svg";
+import Profile from "../../assets/nong.png";
 import NotiIcon from "../../assets/bell.svg";
 import {
   Wrapper,
@@ -74,16 +75,24 @@ const GlobalNavationBar = (props) => {
             <RightMenuList>
               <li>
                 <button>
-                  <img className="right-menu-icon" src={SearchIcon}></img>
+                  <img
+                    className="right-menu-icon"
+                    src={SearchIcon}
+                    alt="search button"
+                  ></img>
                 </button>
               </li>
               <li>
                 <button>
-                  <img className="right-menu-icon" src={NotiIcon}></img>
+                  <img
+                    className="right-menu-icon"
+                    src={NotiIcon}
+                    alt="notification button"
+                  ></img>
                 </button>
               </li>
-              <div>
-                <div>뭐2</div>
+              <div className="profile-wrapper">
+                <img className="profile-image" src={Profile}></img>
               </div>
               <li className="company-service-wrapper">
                 <a className="company-service-btn">기업 서비스</a>
