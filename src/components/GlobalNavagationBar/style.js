@@ -27,6 +27,12 @@ export const NavigationBar = styled.nav`
   font-size: 14px;
   width: 100%;
   height: 100%;
+  & a[data-kind="logo"] {
+    font-weight: bold;
+    line-height: 12px;
+    font-size: 24px;
+    letter-spacing: -0.5px;
+  }
 `;
 
 export const ExploreContentPresentation = styled.div`

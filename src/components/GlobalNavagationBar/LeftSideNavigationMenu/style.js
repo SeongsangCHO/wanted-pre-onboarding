@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   flex: 1;
+  height: 100%;
 `;
 export const MenuList = styled.ul`
   display: flex;

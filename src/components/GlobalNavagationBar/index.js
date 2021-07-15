@@ -137,10 +137,9 @@ const GlobalNavationBar = (props) => {
     if (kind === "explore") {
       setIsMounted(true);
     }
-    if (kind !== "home" && kind !== "navBar" && kind !== "explore" && kind) {
+    if (kind !== "logo" && kind !== "navBar" && kind !== "explore" && kind) {
       setIsMounted(false);
     }
-    console.log(kind, "over");
   };
 
   useEffect(() => {
@@ -158,8 +157,9 @@ const GlobalNavationBar = (props) => {
           data-kind="navBar"
         >
           <div className="smview">
-            <a data-kind="home">logo</a>
+            <a data-kind="logo">wanted</a>
           </div>
+
           <LeftSideNavigationMenu></LeftSideNavigationMenu>
           {isMounted && (
             <ExploreContentPresentation
@@ -171,14 +171,14 @@ const GlobalNavationBar = (props) => {
                   <div className="explore-content-table">
                     {exploreItems.map((item) => {
                       return (
-                        <div className="category subitems">
+                        <div className="category subitems" key={item.id}>
                           <a>
                             <h2>{item.title}</h2>
                             <span className="arrow-right">{">"}</span>
                           </a>
-                          {item.duties.map((duty) => {
+                          {item.duties.map((duty, idx) => {
                             return (
-                              <a>
+                              <a key={duty + idx}>
                                 <h3>{duty}</h3>
                               </a>
                             );

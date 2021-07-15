@@ -6,7 +6,7 @@ export const MenuList = styled.ul`
   list-style: none;
   & li.company-service-wrapper {
     display: flex;
-    padding: 0;
+    padding: 0 0 0 10px;
     @media screen and (max-width: 767px) {
       display: none;
     }
@@ -53,6 +53,31 @@ export const MenuList = styled.ul`
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 50%;
       padding: 3px;
+    }
+  }
+  & div.menuBar {
+    position: relative;
+    margin-right: 10px;
+    width: 18px;
+    height: 3px;
+    background-color: black;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: black;
+      top: -5px;
+      left: 0;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: black;
+      top: 5px;
+      left: 0;
     }
   }
 `;
