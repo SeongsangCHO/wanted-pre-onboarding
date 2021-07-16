@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import GlobalNavationBar from "./components/GlobalNavagationBar";
 import { exploreItems, exploreTitleItems, leftMenuItems } from "./data/data";
