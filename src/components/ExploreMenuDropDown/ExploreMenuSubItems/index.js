@@ -27,7 +27,7 @@ const ExploreMenuSubItems = (props) => {
 };
 
 ExploreMenuSubItems.propTypes = {
-  item: PropTypes.array.isRequired,
+  item: PropTypes.object.isRequired,
 };
 
 export default ExploreMenuSubItems;
