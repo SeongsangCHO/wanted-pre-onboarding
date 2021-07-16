@@ -1,51 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { MenuList } from "./style";
-const leftMenuItems = [
-  {
-    id: 1,
-    title: "탐색",
-    kind: "explore",
-  },
-  {
-    id: 2,
-    title: "커리어 성장",
-    kind: "career",
-  },
-  {
-    id: 3,
-    title: "직군별 연봉",
-    kind: "salary",
-  },
-  {
-    id: 4,
-    title: "이력서",
-    kind: "essay",
-  },
-  {
-    id: 5,
-    title: "매치업",
-    kind: "matchUp",
-  },
-  {
-    id: 6,
-    title: "프리랜서",
-    kind: "free",
-  },
-  {
-    id: 7,
-    title: "Ai 합격예측",
-    kind: "aiExpect",
-  },
-];
+import { Wrapper, MenuList } from "./style";
 
 const LeftSideNavigationMenu = (props) => {
+  const { leftMenuItems } = props;
   return (
-    <div>
-      <MenuList>
+    <Wrapper>
+      <MenuList className="leftSideNavMenu">
+        <li className="xsOnly">
+          <a href="/main" data-kind="home">
+            홈
+          </a>
+        </li>
         {leftMenuItems.map((menuData) => {
           return (
-            <li key={menuData.id}>
+            <li
+              key={menuData.id}
+              className={menuData.xsView ? "xsview" : "smview"}
+            >
               <a href="/main" data-kind={menuData.kind}>
                 {menuData.title}
               </a>
@@ -53,10 +25,12 @@ const LeftSideNavigationMenu = (props) => {
           );
         })}
       </MenuList>
-    </div>
+    </Wrapper>
   );
 };
 
-LeftSideNavigationMenu.propTypes = {};
+LeftSideNavigationMenu.propTypes = {
+  leftMenuItems: PropTypes.array.isRequired,
+};
 
 export default LeftSideNavigationMenu;

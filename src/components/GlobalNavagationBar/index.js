@@ -1,61 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
+import useHoverRender from "../../hooks/useHoverRender";
 import LeftSideNavigationMenu from "./LeftSideNavigationMenu";
-import {
-  Wrapper,
-  CenterAlignContainer,
-  NavigationBar,
-} from "./style";
+import { Wrapper, CenterAlignContainer, NavigationBar } from "./style";
 import RightSideNavigationMenu from "./RightSideNavigationMenu";
-const leftMenuItems = [
-  {
-    id: 1,
-    title: "탐색",
-    kind: "explore",
-  },
-  {
-    id: 2,
-    title: "커리어 성장",
-    kind: "career",
-  },
-  {
-    id: 3,
-    title: "직군별 연봉",
-    kind: "salary",
-  },
-  {
-    id: 4,
-    title: "이력서",
-    kind: "essay",
-  },
-  {
-    id: 5,
-    title: "매치업",
-    kind: "matchUp",
-  },
-  {
-    id: 6,
-    title: "프리랜서",
-    kind: "free",
-  },
-  {
-    id: 7,
-    title: "Ai 합격예측",
-    kind: "aiExpect",
-  },
-];
+import ExploreContent from "../ExploreMenuDropDown";
 
 const GlobalNavationBar = (props) => {
+  const { exploreItems, exploreTitleItems, leftMenuItems } = props;
+  const [isMounted, setIsMounted] = useState(false);
+  const { shouldRender } = useHoverRender({ isMounted });
+  const handleExploreMenuMouseOver = (e) => {
+    const { kind } = e.target.dataset;
+    if (kind === "explore") {
+      setIsMounted(true);
+    }
+    if (kind !== "logo" && kind !== "navBar" && kind !== "explore" && kind) {
+      setIsMounted(false);
+    }
+  };
+
   return (
-    <Wrapper>
-      <CenterAlignContainer>
-        <NavigationBar>
-          <div>
-            <a>logo</a>
+    <Wrapper className="gnb-wrapper">
+      <CenterAlignContainer className="gnb-container">
+        <NavigationBar
+          onMouseOver={handleExploreMenuMouseOver}
+          data-kind="navBar"
+        >
+          <div className="smview">
+            <a data-kind="logo">wanted</a>
           </div>
-          <LeftSideNavigationMenu></LeftSideNavigationMenu>
+
+          <LeftSideNavigationMenu
+            leftMenuItems={leftMenuItems}
+          ></LeftSideNavigationMenu>
+          {isMounted && (
+            <ExploreContent
+              exploreItems={exploreItems}
+              isOpen={shouldRender}
+              data-kind="explore-content-presentation"
+              exploreTitleItems={exploreTitleItems}
+            ></ExploreContent>
+          )}
           <RightSideNavigationMenu></RightSideNavigationMenu>
         </NavigationBar>
       </CenterAlignContainer>
@@ -63,6 +49,10 @@ const GlobalNavationBar = (props) => {
   );
 };
 
-GlobalNavationBar.propTypes = {};
+GlobalNavationBar.propTypes = {
+  exploreItems: PropTypes.array.isRequired,
+  leftMenuItems: PropTypes.array.isRequired,
+  exploreTitleItems: PropTypes.array,
+};
 
 export default GlobalNavationBar;

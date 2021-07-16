@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  flex: 1;
+  height: 100%;
+`;
 export const MenuList = styled.ul`
   display: flex;
   height: 100%;
@@ -9,15 +13,20 @@ export const MenuList = styled.ul`
   font-weight: 600;
   justify-content: space-around;
   list-style: none;
+
   & li {
     height: 100%;
+
+
   }
   & a {
     padding: 15px;
+    font-size: 14px;
     text-decoration: none;
     display: inline-block;
     height: 100%;
     font-weight: 600;
     color: black;
+
   }
 `;

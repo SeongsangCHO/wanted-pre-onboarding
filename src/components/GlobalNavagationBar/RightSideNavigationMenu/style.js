@@ -6,7 +6,10 @@ export const MenuList = styled.ul`
   list-style: none;
   & li.company-service-wrapper {
     display: flex;
-    padding: 0;
+    padding: 0 0 0 10px;
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
     &::before {
       width: 1px;
       height: 10px;
@@ -50,6 +53,33 @@ export const MenuList = styled.ul`
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 50%;
       padding: 3px;
+    }
+  }
+  & div.menuBar {
+    position: relative;
+    width: 18px;
+    height: 3px;
+    background-color: black;
+    margin-right: 10px;
+    cursor: pointer;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: black;
+      top: -5px;
+      left: 0;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 3px;
+      background-color: black;
+      top: 5px;
+      left: 0;
     }
   }
 `;
