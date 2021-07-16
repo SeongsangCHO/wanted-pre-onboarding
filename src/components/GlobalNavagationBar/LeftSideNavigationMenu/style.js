@@ -16,8 +16,6 @@ export const MenuList = styled.ul`
 
   & li {
     height: 100%;
-
-
   }
   & a {
     padding: 15px;
@@ -27,6 +25,5 @@ export const MenuList = styled.ul`
     height: 100%;
     font-weight: 600;
     color: black;
-
   }
 `;
