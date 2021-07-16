@@ -57,10 +57,12 @@ export const MenuList = styled.ul`
   }
   & div.menuBar {
     position: relative;
-    margin-right: 10px;
     width: 18px;
     height: 3px;
     background-color: black;
+    margin-right: 10px;
+    cursor: pointer;
+    
     &::before {
       position: absolute;
       content: "";

@@ -30,7 +30,7 @@ const RightSideNavigationMenu = (props) => {
         <div className="profile-wrapper smview">
           <img className="profile-image" src={Profile}></img>
         </div>
-        <li className="xsOnly"><div className="menuBar"></div></li>
+        <li className="xsOnly menubar-wrapper"><div className="menuBar"></div></li>
         <li className="company-service-wrapper smview">
           <a className="company-service-btn">기업 서비스</a>
         </li>
