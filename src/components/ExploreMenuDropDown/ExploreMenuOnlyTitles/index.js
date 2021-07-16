@@ -19,6 +19,8 @@ const ExploreMenuOnlyTitles = (props) => {
   );
 };
 
-ExploreMenuOnlyTitles.propTypes = {};
+ExploreMenuOnlyTitles.propTypes = {
+  exploreTitleItems: PropTypes.array,
+};
 
 export default ExploreMenuOnlyTitles;
