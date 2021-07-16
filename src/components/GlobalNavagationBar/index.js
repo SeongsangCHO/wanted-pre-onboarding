@@ -38,7 +38,6 @@ const GlobalNavationBar = (props) => {
             <ExploreContent
               exploreItems={exploreItems}
               isOpen={shouldRender}
-              data-kind="explore-content-presentation"
               exploreTitleItems={exploreTitleItems}
             ></ExploreContent>
           )}

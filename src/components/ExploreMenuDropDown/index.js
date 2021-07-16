@@ -7,7 +7,10 @@ import { Presentation, Wrapper, Content, Container } from "./style";
 const ExploreContent = (props) => {
   const { exploreItems, exploreTitleItems, isOpen } = props;
   return (
-    <Presentation className={isOpen ? "show" : ""}>
+    <Presentation
+      className={isOpen ? "show" : ""}
+      data-kind="explore-content-presentation"
+    >
       <Wrapper>
         <Content>
           <Container>
