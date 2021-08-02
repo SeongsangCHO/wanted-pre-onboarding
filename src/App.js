@@ -9,7 +9,7 @@ function App() {
         exploreTitleItems={exploreTitleItems}
         leftMenuItems={leftMenuItems}
       ></GlobalNavationBar>
-      <div id="junk"></div>
+      <div id="junk">a</div>
     </>
   );
 }
